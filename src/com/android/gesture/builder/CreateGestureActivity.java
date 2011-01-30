@@ -19,6 +19,7 @@ package com.android.gesture.builder;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.MotionEvent;
 import android.gesture.GestureOverlayView;
@@ -30,8 +31,8 @@ import android.widget.Toast;
 import java.io.File;
 
 public class CreateGestureActivity extends Activity {
-    private static final float LENGTH_THRESHOLD = 120.0f;
-
+    //static final float LENGTH_THRESHOLD = 120.0f;
+    static final String TAG = "CreateGestureActivity";
     private Gesture mGesture;
     private View mDoneButton;
 
@@ -77,6 +78,7 @@ public class CreateGestureActivity extends Activity {
     @SuppressWarnings({"UnusedDeclaration"})
     public void addGesture(View v) {
         if (mGesture != null) {
+            Log.d(TAG, "mGesture stroke count:" + mGesture.getStrokesCount());
             final TextView input = (TextView) findViewById(R.id.gesture_name);
             final CharSequence name = input.getText();
             if (name.length() == 0) {
@@ -118,9 +120,11 @@ public class CreateGestureActivity extends Activity {
 
         public void onGestureEnded(GestureOverlayView overlay, MotionEvent event) {
             mGesture = overlay.getGesture();
+            Log.d(TAG, "onGestureEnded");
+            /**
             if (mGesture.getLength() < LENGTH_THRESHOLD) {
                 overlay.clear(false);
-            }
+            }***/
             mDoneButton.setEnabled(true);
         }
 

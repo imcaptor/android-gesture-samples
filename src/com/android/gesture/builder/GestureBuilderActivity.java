@@ -67,7 +67,7 @@ public class GestureBuilderActivity extends ListActivity {
     // Type: long (id)
     private static final String GESTURES_INFO_ID = "gestures.info_id";
 
-    private final File mStoreFile = new File(Environment.getExternalStorageDirectory(), "gestures");
+   //private final File mStoreFile = new File(Environment.getExternalStorageDirectory(), "gestures");
 
     private final Comparator<NamedGesture> mSorter = new Comparator<NamedGesture>() {
         public int compare(NamedGesture object1, NamedGesture object2) {
@@ -94,9 +94,9 @@ public class GestureBuilderActivity extends ListActivity {
         mAdapter = new GesturesAdapter(this);
         setListAdapter(mAdapter);
 
-        if (sStore == null) {
-            sStore = GestureLibraries.fromFile(mStoreFile);
-        }
+       
+        sStore = Util.getGestureLibraries();
+        
         mEmpty = (TextView) findViewById(android.R.id.empty);
         loadGestures();
 
@@ -390,7 +390,7 @@ out:        for (String name : entries) {
                 getListView().setVisibility(View.GONE);
                 mEmpty.setVisibility(View.VISIBLE);
                 mEmpty.setText(getString(R.string.gestures_error_loading,
-                        mStoreFile.getAbsolutePath()));
+                        Util.mStoreFile.getAbsolutePath()));
             } else {
                 findViewById(R.id.addButton).setEnabled(true);
                 findViewById(R.id.reloadButton).setEnabled(true);
