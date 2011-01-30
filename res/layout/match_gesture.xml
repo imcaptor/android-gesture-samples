@@ -18,6 +18,11 @@
 		android:gestureStrokeType="multiple"		
 		android:gestureStrokeSquarenessThreshold="0.01"
 		/>
-
+	<Button
+            android:id="@+id/listButton"
+            android:onClick="listGestures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"                       
+            android:text="@string/gestures_list" />
 
 </LinearLayout>

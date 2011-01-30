@@ -28,13 +28,13 @@
     <!-- Buttons -->
     <skip />
     <!-- Label, button used to add a gesture -->
-    <string name="button_add">Add gesture</string>
+    <string name="button_add">增加手势</string>
     <!-- Label, button used to reload all gestures -->
-    <string name="button_reload">Reload</string>
+    <string name="button_reload">重新载入</string>
     <!-- Label, button used to cancel the operation of adding a gesture -->
-    <string name="button_discard">Discard</string>
+    <string name="button_discard">放弃</string>
     <!-- Label, button used to save a gesture newly created -->
-    <string name="button_done">Done</string>
+    <string name="button_done">完成</string>
     
     <!-- Gestures -->
     <skip />
