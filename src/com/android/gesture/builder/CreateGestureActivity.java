@@ -30,6 +30,8 @@ import android.widget.Toast;
 
 import java.io.File;
 
+//test comment2
+
 public class CreateGestureActivity extends Activity {
     //static final float LENGTH_THRESHOLD = 120.0f;
     static final String TAG = "CreateGestureActivity";
